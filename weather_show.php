@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+ <?php 
+ $data = file_get_contents("https://emo.lv/weather-api/forecast/?
+ city=cesis,latvia");
+ $weatherData = json_decode($data, true);
+ echo "Pilsēta: " . $weatherData['location']['city'];
+ 
+ ?>
 </body>
 </html>
